@@ -36,10 +36,10 @@ resource "aws_security_group" "allow_http" {
 }
 
 resource "aws_instance" "web_server" {
-  ami           = "ami-0df8c184d5f6ae949" # Replace with the correct AMI ID for your region
+  ami           = "ami-0df8c184d5f6ae949" # Replace with the correct AMI ID for your region will proprbly be outdated
   instance_type = "t2.micro"
   security_groups = [aws_security_group.allow_http.name]
-  key_name      = "tets_key"  # Replace with your actual SSH key name for access
+  key_name      = "<your_key_name>"  # Replace with your actual SSH key name for access
 
   user_data = <<-EOF
               #!/bin/bash
